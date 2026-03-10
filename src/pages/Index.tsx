@@ -440,7 +440,7 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
       {/* Lista lateral */}
       <div className="lg:col-span-2 rounded-2xl shadow-lg p-3 sm:p-4 order-2" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
         <h3 className="text-xs font-bold uppercase tracking-widest mb-3 px-1" style={{ color: C.cta }}>
-          🎬 {videos.length} Depoimentos
+          🎬 Depoimentos
         </h3>
         <div className="max-h-[480px] overflow-y-auto pr-1 video-list-scroll space-y-1.5">
           {videos.map((video) => {
