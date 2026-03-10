@@ -79,7 +79,7 @@ const partnerVideosNew = [
     title: "Déborah Oliveira — Afiliada Top do Brasil | R$3 milhões em vendas",
     name: "Déborah Oliveira — Afiliada Top do Brasil",
     duration: "01:08",
-    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou mais de 10 mil alunos a faturarem vendendo na Shopee, Amazon e Kiwify — e sozinha já ultrapassou os 3 milhões em vendas. Com quase 200 mil seguidores, ela mostra que dá, sim, para vender todos os dias como afiliada, mesmo sem aparecer — e sem ficar o dia todo no celular. Para escalar o atendimento, responder mais rápido e não perder nenhuma venda, Déborah usa o InstaNinja como aliada nas automações.",
+    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou <strong>mais de 10 mil alunos</strong> a faturarem vendendo na Shopee, Amazon e Kiwify — e sozinha já ultrapassou os <strong>3 milhões em vendas</strong>. Com quase <strong>200 mil seguidores</strong>, ela mostra que dá, sim, para <strong>vender todos os dias como afiliada</strong>, mesmo sem aparecer — e sem ficar o dia todo no celular. Para escalar o atendimento, responder mais rápido e <strong>não perder nenhuma venda</strong>, Déborah usa o <strong>InstaNinja</strong> como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.youtube.com/shorts/pWwCWtFcWNo?feature=share",
     thumbnail: "https://img.youtube.com/vi/pWwCWtFcWNo/hqdefault.jpg"
