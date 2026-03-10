@@ -956,7 +956,7 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer style={{ background: C.dark }}>
-        <div ref={revealFooterCta} className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+        <div className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Teste agora mesmo e veja como automatizar suas interações no Instagram pode transformar suas vendas.</h2>
             <p className="text-xs sm:text-sm mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Teste o plano gratuito do InstaNinja e comece a responder comentários e enviar links automaticamente.</p>
