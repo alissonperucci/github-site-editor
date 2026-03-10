@@ -715,7 +715,7 @@ export default function Index() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section id="como-funciona" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section ref={revealComoFunciona} id="como-funciona" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-10">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("howItWorks.badge")}</span>
