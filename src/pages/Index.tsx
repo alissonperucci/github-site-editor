@@ -752,7 +752,7 @@ export default function Index() {
       <SectionDivider from={C.bg} to={C.statsBg} />
 
       {/* STATS */}
-      <section className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
+      <section ref={revealStats} className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("stats.badge")}</span>
