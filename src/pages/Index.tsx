@@ -183,12 +183,7 @@ const purpleGrad = {
   backgroundClip: "text" as const,
 };
 
-const segmentCards = [
-  { icon: "🛍️", title: "Afiliados", desc: "Automatize respostas no Instagram e envie ofertas e links de afiliado na hora." },
-  { icon: "📱", title: "Criadores de Conteúdo", desc: "Automatize respostas e transforme comentários em seguidores." },
-  { icon: "🏪", title: "Pequenas Empresas", desc: "Quem manda mensagem quer resposta imediata. Se não houver resposta, ele sai." },
-  { icon: "🏢", title: "Grandes Empresas", desc: "Use mensagens de boas-vindas automáticas para responder na hora." },
-];
+// segmentCards moved to translation keys
 
 const storesList = [
   { logo: amazonLogo, name: "Amazon" },
@@ -396,6 +391,7 @@ function SectionDivider({ from, to, flip = false }: { from: string; to: string; 
 }
 
 function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
+  const { t } = useTranslation();
   const [currentVideo, setCurrentVideo] = useState(videos?.[0] ?? partnerVideosNew[0]);
   const [playerLoaded, setPlayerLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -457,17 +453,17 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
           )}
         </div>
         <div className="p-4 sm:p-5">
-          <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>Descrição</h3>
+          <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>{t("videoGallery.description")}</h3>
           <p className="text-xs sm:text-sm mb-3 leading-relaxed [&_strong]:font-bold [&_strong]:text-foreground" style={{ color: C.muted }} dangerouslySetInnerHTML={{ __html: currentVideo.desc }} />
           <p className="text-xs sm:text-sm font-semibold leading-relaxed" style={{ color: C.primary }}>
-            Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
+            {t("videoGallery.watchVideo", { name: currentVideo.name })}
           </p>
         </div>
       </div>
       {/* Lista lateral */}
       <div className="lg:col-span-2 rounded-2xl shadow-lg p-3 sm:p-4 order-2" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
         <h3 className="text-xs font-bold uppercase tracking-widest mb-3 px-1" style={{ color: C.cta }}>
-          🎬 Depoimentos
+          {t("videoGallery.testimonials")}
         </h3>
         <div className="max-h-[480px] overflow-y-auto pr-1 video-list-scroll space-y-1.5">
           {videos.map((video) => {
@@ -541,6 +537,9 @@ export default function Index() {
   const triggerItems = t("triggers.items", { returnObjects: true }) as any[];
   const affiliateItems = t("affiliate.items", { returnObjects: true }) as any[];
   const faqItems = t("faq.items", { returnObjects: true }) as any[];
+  const segmentCards = t("segments", { returnObjects: true }) as any[];
+  const trustBadges = t("hero.trustBadges", { returnObjects: true }) as any[];
+  const trustSealItems = t("trustSeals.items", { returnObjects: true }) as string[];
 
   const PRESS_VIDEO_URL = "https://www.instaninja.com.br/videos/instaninja_Divulganinja_ZAP24_Imprenssa.mp4";
 
@@ -586,7 +585,7 @@ export default function Index() {
             <a href={APP_URL} target="_blank" rel="noreferrer"
               className="text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
-              Entrar
+              {t("nav.login")}
             </a>
           </div>
         </div>
@@ -611,17 +610,11 @@ export default function Index() {
                   🏆 {t("hero.badge")}
                 </div>
                 <h1 className="text-xl sm:text-3xl lg:text-[2.75rem] font-extrabold leading-[1.15] mb-3" style={{ color: C.text }}>
-                  Responda de modo automático e ilimitado no Instagram
+                  {t("hero.headline1")}
                 </h1>
                 <div className="text-base sm:text-xl lg:text-2xl font-bold leading-tight mb-3" style={{ color: C.primary, minHeight: "1.4em" }}>
                   <TypewriterEffect
-                    phrases={[
-                      "Responda comentários e envie Direct automaticamente",
-                      "Envie até 20 links por vez, com áudios e botões",
-                      "Envia mensagens de boas-vindas",
-                      "Realize autoatendimento",
-                      "Ganhe mais seguidores orgânicos"
-                    ]}
+                    phrases={t("hero.typewriter", { returnObjects: true }) as string[]}
                     speed={30} deleteSpeed={18} pauseDuration={2000}
                   />
                 </div>
@@ -631,11 +624,7 @@ export default function Index() {
                 <CTAButton href={APP_URL} large className="w-full sm:w-auto">{t("hero.ctaPrimary")}</CTAButton>
                 {/* Trust badges */}
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 mt-3 opacity-50">
-                  {[
-                    { icon: "🌐", label: "API Oficial" },
-                    { icon: "💳", label: "Pix ou Cartão" },
-                    { icon: "👥", label: "+50 mil Usuários Ativos" },
-                  ].map((badge, i) => (
+                  {(t("hero.trustBadges", { returnObjects: true }) as any[]).map((badge: any, i: number) => (
                     <React.Fragment key={i}>
                       {i > 0 && <div className="hidden sm:block w-px h-3 bg-gray-300" />}
                       <div className="flex items-center gap-1.5">
@@ -650,9 +639,9 @@ export default function Index() {
               <div className="relative flex-shrink-0 w-full lg:w-auto flex justify-center">
                 <PhoneCarousel />
                 {isDesktop && <>
-                  <FloatingBadge className="absolute top-12 -left-20 z-50 animate-float-1" icon="📈" title="3x mais" sub="conversões" />
-                  <FloatingBadge className="absolute top-40 -right-16 z-50 animate-float-2" icon="💬" title="24/7" sub="automação ativa" />
-                  <FloatingBadge className="absolute bottom-24 -left-12 z-50 animate-float-3" icon="⚡" title="15 segundos" sub="para ativar" />
+                  <FloatingBadge className="absolute top-12 -left-20 z-50 animate-float-1" icon="📈" title={t("floatingBadges.conversions.title")} sub={t("floatingBadges.conversions.sub")} />
+                  <FloatingBadge className="absolute top-40 -right-16 z-50 animate-float-2" icon="💬" title={t("floatingBadges.automation.title")} sub={t("floatingBadges.automation.sub")} />
+                  <FloatingBadge className="absolute bottom-24 -left-12 z-50 animate-float-3" icon="⚡" title={t("floatingBadges.activate.title")} sub={t("floatingBadges.activate.sub")} />
                 </>}
               </div>
             </div>
@@ -673,7 +662,7 @@ export default function Index() {
                   <span className="text-2xl">{seg.icon}</span>
                   <span className="font-extrabold text-xs sm:text-sm" style={{ color: C.text }}>{seg.title}</span>
                   <span className="text-[10px] sm:text-[11px] leading-relaxed" style={{ color: C.muted }}>{seg.desc}</span>
-                  <span className="text-[10px] sm:text-[11px] font-bold mt-auto" style={{ color: C.cta }}>Teste Grátis →</span>
+                  <span className="text-[10px] sm:text-[11px] font-bold mt-auto" style={{ color: C.cta }}>{seg.cta}</span>
                 </a>
               ))}
             </div>
@@ -691,12 +680,10 @@ export default function Index() {
               <div className="text-center mb-6">
                 <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                   <span className="text-lg">⭐</span>
-                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Reconhecimento Nacional</span>
+                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>{t("recognition.badge")}</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
-                  O <span style={{ color: "#D520C3" }}>#1 em Automação</span> para Afiliados, Produtores de Conteúdo e Empresas no Brasil
-                </h2>
-                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Nos maiores programas de afiliados do Brasil</p>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white" dangerouslySetInnerHTML={{ __html: t("recognition.title").replace('<highlight>', '<span style="color:#D520C3">').replace('</highlight>', '</span>') }} />
+                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>{t("recognition.sub")}</p>
               </div>
               {/* Marquee de plataformas */}
               <div className="marquee-container">
@@ -715,10 +702,10 @@ export default function Index() {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                 <span className="text-lg">📰</span>
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Em Destaque</span>
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>{t("recognition.pressBadge")}</span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h2>
-              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>Presença nos principais veículos de comunicação do Brasil</p>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">{t("recognition.pressTitle")}</h2>
+              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>{t("recognition.pressSub")}</p>
               {/* Marquee de imprensa */}
               <div className="marquee-container">
                 <div className="marquee-track marquee-reverse">
@@ -742,10 +729,10 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight" style={{ color: C.primary }}>
-              Todo mundo já está usando o InstaNinja. E você? O que está fazendo para não perder vendas, clientes e seguidores?
+              {t("videoGallery.title")}
             </h2>
             <p className="text-xs sm:text-sm max-w-3xl mx-auto" style={{ color: C.muted }}>
-              Não é só para grandes influenciadores — qualquer pessoa pode vender mais e ganhar tempo com o InstaNinja. É simples, acessível e rápido de ativar. Somos a maior automação de Instagram da América do Sul 🌎, prontos para colocar você no nível dos maiores.
+              {t("videoGallery.sub")}
             </p>
           </div>
           <VideoGallery videos={partnerVideosNew} />
@@ -770,7 +757,7 @@ export default function Index() {
                 </div>
               ))}
               <div className="col-span-1 sm:col-span-2 mt-2">
-                <CTAButton href={APP_URL} large className="w-full sm:w-auto">Teste Grátis agora</CTAButton>
+                <CTAButton href={APP_URL} large className="w-full sm:w-auto">{t("howItWorks.ctaButton")}</CTAButton>
               </div>
             </div>
             <div className="flex-shrink-0 flex justify-center">
@@ -781,7 +768,7 @@ export default function Index() {
                 </video>
                 <div className="absolute -top-2 -right-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white shadow-lg"
                   style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
-                  No piloto automático
+                  {t("howItWorks.autoPilot")}
                 </div>
               </div>
             </div>
@@ -812,7 +799,7 @@ export default function Index() {
             <p className="text-sm font-medium" style={{ color: "#cc0000" }}>{t("stats.warning")}</p>
           </div>
           <div className="mt-6 text-center">
-            <CTAButton href={APP_URL} large>Planos A Partir De R$ 39,90/Mês →</CTAButton>
+            <CTAButton href={APP_URL} large>{t("stats.ctaButton")}</CTAButton>
           </div>
         </div>
       </section>
@@ -869,13 +856,13 @@ export default function Index() {
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: "#f5c842" }}>{t("affiliate.badge")}</span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold mt-1.5 mb-1.5 text-white">{t("affiliate.title")}</h2>
             <p className="text-xs sm:text-sm max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Comissões maiores que Shopee, Amazon e Mercado Livre — pagas todo mês, para sempre.
+              {t("affiliate.sub")}
             </p>
           </div>
           <div className="rounded-2xl p-6 sm:p-8 mb-6 text-center" style={{ background: "rgba(255,255,255,0.07)", border: "1.5px solid rgba(255,255,255,0.12)" }}>
             <div className="text-5xl sm:text-7xl font-extrabold mb-1.5 text-white">20%</div>
-            <p className="text-lg sm:text-xl font-bold mb-0.5 text-white">de comissão recorrente todo mês</p>
-            <p className="text-[10px] sm:text-[11px]" style={{ color: "rgba(255,255,255,0.5)" }}>Por todo o tempo que o seu indicado for assinante — sem limite de indicações</p>
+            <p className="text-lg sm:text-xl font-bold mb-0.5 text-white">{t("affiliate.commissionTitle")}</p>
+            <p className="text-[10px] sm:text-[11px]" style={{ color: "rgba(255,255,255,0.5)" }}>{t("affiliate.commissionSub")}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             {Array.isArray(affiliateItems) && affiliateItems.map((item: any, i: number) => (
@@ -892,7 +879,7 @@ export default function Index() {
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})`, boxShadow: `0 6px 24px -6px ${C.cta}88` }}>
               {t("affiliate.cta")}
             </a>
-            <p className="mt-2.5 text-[10px]" style={{ color: "rgba(255,255,255,0.35)" }}>Pagamentos via Hotmart — a maior plataforma de afiliados do mundo</p>
+            <p className="mt-2.5 text-[10px]" style={{ color: "rgba(255,255,255,0.35)" }}>{t("affiliate.hotmartNote")}</p>
           </div>
         </div>
       </section>
@@ -901,7 +888,7 @@ export default function Index() {
       <section className="py-6 sm:py-8 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center" style={{ background: "#fff", border: "1.5px solid #e8e8e8", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}>
-            <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#25D366" }}>CONHEÇA TAMBÉM</span>
+            <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#25D366" }}>{t("divulganinja.alsoKnow")}</span>
             <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold mt-2 mb-3" style={{ color: C.text }}>
               {t("divulganinja.title")}{" "}
               <span style={{ color: "#25D366" }}>{t("divulganinja.titleWa")}</span>{" "}
@@ -962,11 +949,11 @@ export default function Index() {
       <footer style={{ background: C.dark }}>
         <div className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Teste agora mesmo e veja como automatizar suas interações no Instagram pode transformar suas vendas.</h2>
-            <p className="text-xs sm:text-sm mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Teste o plano gratuito do InstaNinja e comece a responder comentários e enviar links automaticamente.</p>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">{t("footerCta.title")}</h2>
+            <p className="text-xs sm:text-sm mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>{t("footerCta.sub")}</p>
             <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-block px-7 py-2.5 rounded-lg font-semibold transition-all hover:opacity-90 text-white text-sm"
               style={{ background: C.primary }}>
-              Teste agora mesmo
+              {t("footerCta.button")}
             </a>
           </div>
         </div>
@@ -1012,11 +999,11 @@ export default function Index() {
                   </a>
                 </div>
                 <div className="border-t pt-3" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-                  <p className="font-bold text-[10px] text-white mb-2">Selos de Confiança</p>
+                  <p className="font-bold text-[10px] text-white mb-2">{t("trustSeals.title")}</p>
                   <div className="space-y-1 text-[10px]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>API Oficial da Meta</span></div>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>Plano Gratuito</span></div>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>Cancele quando quiser</span></div>
+                    {trustSealItems.map((item, i) => (
+                      <div key={i} className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>{item}</span></div>
+                    ))}
                   </div>
                 </div>
               </div>
