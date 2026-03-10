@@ -391,6 +391,7 @@ function SectionDivider({ from, to, flip = false }: { from: string; to: string; 
 }
 
 function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
+  const { t } = useTranslation();
   const [currentVideo, setCurrentVideo] = useState(videos?.[0] ?? partnerVideosNew[0]);
   const [playerLoaded, setPlayerLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
