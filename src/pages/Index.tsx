@@ -536,6 +536,9 @@ export default function Index() {
   const triggerItems = t("triggers.items", { returnObjects: true }) as any[];
   const affiliateItems = t("affiliate.items", { returnObjects: true }) as any[];
   const faqItems = t("faq.items", { returnObjects: true }) as any[];
+  const segmentCards = t("segments", { returnObjects: true }) as any[];
+  const trustBadges = t("hero.trustBadges", { returnObjects: true }) as any[];
+  const trustSealItems = t("trustSeals.items", { returnObjects: true }) as string[];
 
   const PRESS_VIDEO_URL = "https://www.instaninja.com.br/videos/instaninja_Divulganinja_ZAP24_Imprenssa.mp4";
 
