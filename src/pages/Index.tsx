@@ -860,8 +860,8 @@ export default function Index() {
           </div>
           <div className="rounded-2xl p-6 sm:p-8 mb-6 text-center" style={{ background: "rgba(255,255,255,0.07)", border: "1.5px solid rgba(255,255,255,0.12)" }}>
             <div className="text-5xl sm:text-7xl font-extrabold mb-1.5 text-white">20%</div>
-            <p className="text-lg sm:text-xl font-bold mb-0.5 text-white">de comissão recorrente todo mês</p>
-            <p className="text-[10px] sm:text-[11px]" style={{ color: "rgba(255,255,255,0.5)" }}>Por todo o tempo que o seu indicado for assinante — sem limite de indicações</p>
+            <p className="text-lg sm:text-xl font-bold mb-0.5 text-white">{t("affiliate.commissionTitle")}</p>
+            <p className="text-[10px] sm:text-[11px]" style={{ color: "rgba(255,255,255,0.5)" }}>{t("affiliate.commissionSub")}</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             {Array.isArray(affiliateItems) && affiliateItems.map((item: any, i: number) => (
