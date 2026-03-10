@@ -479,7 +479,7 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
                   background: isActive ? `${C.primary}0A` : "transparent",
                   border: isActive ? `1.5px solid ${C.primary}30` : "1.5px solid transparent",
                 }}
-                onClick={() => { setCurrentVideo(video); if (videoRef.current && !isYouTube(video.videoUrl)) videoRef.current.load(); }}>
+                onClick={() => handleVideoSwitch(video)}>
                 <div className="relative flex-shrink-0">
                   <img src={video.thumbnail} alt={video.title} loading="lazy" decoding="async"
                     className="w-16 h-10 object-cover rounded-lg" />
