@@ -502,6 +502,18 @@ export default function Index() {
 
   const PRESS_VIDEO_URL = "https://www.instaninja.com.br/videos/instaninja_Divulganinja_ZAP24_Imprenssa.mp4";
 
+  const revealTagline = useScrollReveal();
+  const revealReconhecimento = useScrollReveal();
+  const revealGaleria = useScrollReveal();
+  const revealComoFunciona = useScrollReveal();
+  const revealStats = useScrollReveal();
+  const revealFeatures = useScrollReveal();
+  const revealTriggers = useScrollReveal();
+  const revealAffiliate = useScrollReveal();
+  const revealDivulga = useScrollReveal();
+  const revealFaq = useScrollReveal();
+  const revealFooterCta = useScrollReveal();
+
   return (
     <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg, color: C.text }}>
 
