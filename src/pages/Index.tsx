@@ -606,17 +606,11 @@ export default function Index() {
                   🏆 {t("hero.badge")}
                 </div>
                 <h1 className="text-xl sm:text-3xl lg:text-[2.75rem] font-extrabold leading-[1.15] mb-3" style={{ color: C.text }}>
-                  Responda de modo automático e ilimitado no Instagram
+                  {t("hero.headline1")}
                 </h1>
                 <div className="text-base sm:text-xl lg:text-2xl font-bold leading-tight mb-3" style={{ color: C.primary, minHeight: "1.4em" }}>
                   <TypewriterEffect
-                    phrases={[
-                      "Responda comentários e envie Direct automaticamente",
-                      "Envie até 20 links por vez, com áudios e botões",
-                      "Envia mensagens de boas-vindas",
-                      "Realize autoatendimento",
-                      "Ganhe mais seguidores orgânicos"
-                    ]}
+                    phrases={t("hero.typewriter", { returnObjects: true }) as string[]}
                     speed={30} deleteSpeed={18} pauseDuration={2000}
                   />
                 </div>
