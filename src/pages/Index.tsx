@@ -413,28 +413,10 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
   const isCurrentYouTube = isYouTube(currentVideo.videoUrl);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-start">
-      {/* Lista */}
-      <div className="bg-white rounded-xl shadow-md p-3 sm:p-4 order-2 lg:order-1">
-        <h3 className="text-base font-bold mb-3">Lista</h3>
-        <div className="max-h-[420px] overflow-y-auto pr-1 video-list-scroll">
-          {videos.map((video) => (
-            <div key={video.id}
-              className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer mb-1.5 transition-colors ${currentVideo.id === video.id ? 'bg-purple-50 ring-1 ring-purple-200' : 'hover:bg-gray-50'}`}
-              onClick={() => { setCurrentVideo(video); if (videoRef.current && !isYouTube(video.videoUrl)) videoRef.current.load(); }}>
-              <img src={video.thumbnail} alt={video.title} loading="lazy" decoding="async"
-                className="w-14 h-9 object-cover rounded flex-shrink-0" />
-              <div className="min-w-0">
-                <p className="text-xs sm:text-sm font-semibold leading-tight truncate">{video.title}</p>
-                <p className="text-[11px] text-gray-400 mt-0.5">{video.duration}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Player */}
-      <div className="bg-white rounded-xl shadow-md p-3 sm:p-4 order-1 lg:order-2">
-        <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden mb-3">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 items-start">
+      {/* Player - takes more space */}
+      <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-lg order-1" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
+        <div className="relative w-full aspect-video bg-black">
           {isCurrentYouTube && youtubeId ? (
             <iframe width="100%" height="100%" loading="lazy"
               src={`https://www.youtube.com/embed/${youtubeId}`}
@@ -447,14 +429,55 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
             </video>
           )}
         </div>
-        <h3 className="text-base font-bold mb-1.5">Descrição</h3>
-        <p className="text-xs sm:text-sm text-gray-700 mb-3 leading-relaxed">{currentVideo.desc}</p>
-        <ul className="text-xs sm:text-sm text-gray-700 mb-3 space-y-1">
-          {currentVideo.bullets.map((bullet, idx) => <li key={idx}>{bullet}</li>)}
-        </ul>
-        <p className="text-xs sm:text-sm font-semibold" style={{ color: C.primary }}>
-          Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
-        </p>
+        <div className="p-4 sm:p-5">
+          <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>Descrição</h3>
+          <p className="text-xs sm:text-sm mb-3 leading-relaxed" style={{ color: C.muted }}>{currentVideo.desc}</p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            {currentVideo.bullets.map((bullet, idx) => (
+              <span key={idx} className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-full"
+                style={{ background: `${C.primary}0D`, color: C.primary, border: `1px solid ${C.primary}20` }}>
+                ✓ {bullet.replace(/^[✔️✅☑️]\s*/, '')}
+              </span>
+            ))}
+          </div>
+          <p className="text-xs sm:text-sm font-semibold leading-relaxed" style={{ color: C.primary }}>
+            Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
+          </p>
+        </div>
+      </div>
+      {/* Lista lateral */}
+      <div className="lg:col-span-2 rounded-2xl shadow-lg p-3 sm:p-4 order-2" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-3 px-1" style={{ color: C.cta }}>
+          🎬 {videos.length} Depoimentos
+        </h3>
+        <div className="max-h-[480px] overflow-y-auto pr-1 video-list-scroll space-y-1.5">
+          {videos.map((video) => {
+            const isActive = currentVideo.id === video.id;
+            return (
+              <div key={video.id}
+                className="flex items-center gap-3 p-2.5 rounded-xl cursor-pointer transition-all"
+                style={{
+                  background: isActive ? `${C.primary}0A` : "transparent",
+                  border: isActive ? `1.5px solid ${C.primary}30` : "1.5px solid transparent",
+                }}
+                onClick={() => { setCurrentVideo(video); if (videoRef.current && !isYouTube(video.videoUrl)) videoRef.current.load(); }}>
+                <div className="relative flex-shrink-0">
+                  <img src={video.thumbnail} alt={video.title} loading="lazy" decoding="async"
+                    className="w-16 h-10 object-cover rounded-lg" />
+                  {isActive && (
+                    <div className="absolute inset-0 rounded-lg flex items-center justify-center" style={{ background: `${C.primary}55` }}>
+                      <span className="text-white text-xs">▶</span>
+                    </div>
+                  )}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm font-bold leading-tight truncate" style={{ color: isActive ? C.primary : C.text }}>{video.title}</p>
+                  <p className="text-[10px] mt-0.5" style={{ color: C.muted }}>{video.duration}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
