@@ -452,17 +452,17 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
           )}
         </div>
         <div className="p-4 sm:p-5">
-          <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>Descrição</h3>
+          <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>{t("videoGallery.description")}</h3>
           <p className="text-xs sm:text-sm mb-3 leading-relaxed [&_strong]:font-bold [&_strong]:text-foreground" style={{ color: C.muted }} dangerouslySetInnerHTML={{ __html: currentVideo.desc }} />
           <p className="text-xs sm:text-sm font-semibold leading-relaxed" style={{ color: C.primary }}>
-            Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
+            {t("videoGallery.watchVideo", { name: currentVideo.name })}
           </p>
         </div>
       </div>
       {/* Lista lateral */}
       <div className="lg:col-span-2 rounded-2xl shadow-lg p-3 sm:p-4 order-2" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
         <h3 className="text-xs font-bold uppercase tracking-widest mb-3 px-1" style={{ color: C.cta }}>
-          🎬 Depoimentos
+          {t("videoGallery.testimonials")}
         </h3>
         <div className="max-h-[480px] overflow-y-auto pr-1 video-list-scroll space-y-1.5">
           {videos.map((video) => {
