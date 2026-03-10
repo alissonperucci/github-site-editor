@@ -855,7 +855,7 @@ export default function Index() {
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: "#f5c842" }}>{t("affiliate.badge")}</span>
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold mt-1.5 mb-1.5 text-white">{t("affiliate.title")}</h2>
             <p className="text-xs sm:text-sm max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Comissões maiores que Shopee, Amazon e Mercado Livre — pagas todo mês, para sempre.
+              {t("affiliate.sub")}
             </p>
           </div>
           <div className="rounded-2xl p-6 sm:p-8 mb-6 text-center" style={{ background: "rgba(255,255,255,0.07)", border: "1.5px solid rgba(255,255,255,0.12)" }}>
