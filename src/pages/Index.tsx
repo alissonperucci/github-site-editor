@@ -955,6 +955,7 @@ export default function Index() {
         </div>
       </section>
 
+      </main>
       {/* FOOTER */}
       <footer style={{ background: C.dark }}>
         <div className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
