@@ -307,7 +307,7 @@ const PhoneCarousel = memo(function PhoneCarousel() {
                 ) : (
                   <div className="relative w-full h-full cursor-pointer group" onClick={() => setPlayingId(ytId)}>
                     <img src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
-                      alt={`Depoimento ${i + 1}`} loading="lazy" decoding="async"
+                      alt={`Depoimento ${i + 1}`} loading="lazy" decoding="async" width="480" height="360"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
                       <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
@@ -547,6 +547,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg, color: C.text }}>
+    <main>
 
       {/* MODAL VÍDEO IMPRENSA */}
       {pressVideoOpen && (
@@ -565,7 +566,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
         style={{ background: "rgba(255,255,255,0.97)", backdropFilter: "blur(14px)", borderBottom: scrolled ? "2px solid #e5e7eb" : "1px solid transparent", boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.06)" : "none" }}>
         <div className="max-w-6xl mx-auto px-2 sm:px-6 py-1.5 sm:py-2.5 flex items-center justify-between gap-1.5">
-          <img src={instaNinjaLogo} alt="InstaNinja" className="h-9 sm:h-9 w-auto flex-shrink-0" loading="eager" />
+          <img src={instaNinjaLogo} alt="InstaNinja" className="h-9 sm:h-9 w-auto flex-shrink-0" width="119" height="36" loading="eager" />
           <div className="hidden md:flex items-center gap-5 text-sm font-medium">
             <a href="#como-funciona" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.howItWorks")}</a>
             <a href="#recursos" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.features")}</a>
@@ -575,9 +576,9 @@ export default function Index() {
             <div className="flex items-center gap-0.5 rounded-full p-0.5" style={{ background: "#f0f0f0" }}>
               {languages.map(l => (
                 <button key={l.code} onClick={() => i18n.changeLanguage(l.code)}
-                  className="rounded-full px-1.5 py-0.5 flex items-center gap-1 transition-all"
+                  className="rounded-full px-2 py-1.5 flex items-center gap-1 transition-all min-w-[44px] min-h-[44px] justify-center"
                   style={{ background: i18n.language === l.code ? "#fff" : "transparent", boxShadow: i18n.language === l.code ? "0 1px 6px rgba(0,0,0,0.08)" : "none" }}>
-                  <img src={l.flag} alt={l.label} className="w-5 h-auto rounded-sm" loading="lazy" />
+                  <img src={l.flag} alt={l.label} className="w-5 h-auto rounded-sm" width="20" height="15" loading="lazy" />
                   <span className="text-[10px] font-bold leading-none hidden sm:inline" style={{ color: i18n.language === l.code ? C.primary : "#666" }}>{l.label}</span>
                 </button>
               ))}
@@ -692,9 +693,9 @@ export default function Index() {
                   <span className="text-lg">⭐</span>
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Reconhecimento Nacional</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
                   O <span style={{ color: "#D520C3" }}>#1 em Automação</span> para Afiliados, Produtores de Conteúdo e Empresas no Brasil
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Nos maiores programas de afiliados do Brasil</p>
               </div>
               {/* Marquee de plataformas */}
@@ -703,7 +704,7 @@ export default function Index() {
                   {[...platforms, ...platforms].map((p, i) => (
                     <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0"
                       style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "140px" }}>
-                      <img src={p.logo} alt={p.name} loading="lazy" decoding="async" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />
+                      <img src={p.logo} alt={p.name} loading="lazy" decoding="async" width="56" height="56" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />
                       <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{p.name}</span>
                     </div>
                   ))}
@@ -716,7 +717,7 @@ export default function Index() {
                 <span className="text-lg">📰</span>
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Em Destaque</span>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h3>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h2>
               <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>Presença nos principais veículos de comunicação do Brasil</p>
               {/* Marquee de imprensa */}
               <div className="marquee-container">
@@ -725,7 +726,7 @@ export default function Index() {
                     <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0 cursor-pointer hover:scale-105 transition-transform"
                       style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}
                       onClick={() => setPressVideoOpen(true)}>
-                      <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+                      <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" width="64" height="64" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
                       <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{logo.name}</span>
                     </div>
                   ))}
@@ -775,6 +776,7 @@ export default function Index() {
             <div className="flex-shrink-0 flex justify-center">
               <div className="relative" style={{ filter: `drop-shadow(0 20px 40px ${C.primary}30)` }}>
                 <img src={heroPhoneGif} alt="InstaNinja no celular" loading="lazy" decoding="async"
+                  width="256" height="458"
                   className="w-48 lg:w-64 rounded-2xl" style={{ boxShadow: "0 24px 48px -12px rgba(0,0,0,0.2)" }} />
                 <div className="absolute -top-2 -right-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white shadow-lg"
                   style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
@@ -920,7 +922,7 @@ export default function Index() {
                 {storesList.map((store, i) => (
                   <div key={i} className="flex flex-col items-center">
                     <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-2" style={{ background: "#f5f5f5", border: "1px solid #e8e8e8" }}>
-                      <img src={store.logo} alt={store.name} loading="lazy" decoding="async" className="w-10 h-10 object-contain" />
+                      <img src={store.logo} alt={store.name} loading="lazy" decoding="async" width="40" height="40" className="w-10 h-10 object-contain" />
                     </div>
                     <span className="text-[10px] font-medium text-center" style={{ color: C.muted }}>{store.name}</span>
                   </div>
@@ -954,6 +956,7 @@ export default function Index() {
         </div>
       </section>
 
+      </main>
       {/* FOOTER */}
       <footer style={{ background: C.dark }}>
         <div className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
