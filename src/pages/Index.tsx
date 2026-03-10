@@ -576,7 +576,7 @@ export default function Index() {
             <div className="flex items-center gap-0.5 rounded-full p-0.5" style={{ background: "#f0f0f0" }}>
               {languages.map(l => (
                 <button key={l.code} onClick={() => i18n.changeLanguage(l.code)}
-                  className="rounded-full px-1.5 py-0.5 flex items-center gap-1 transition-all"
+                  className="rounded-full px-2 py-1.5 flex items-center gap-1 transition-all min-w-[44px] min-h-[44px] justify-center"
                   style={{ background: i18n.language === l.code ? "#fff" : "transparent", boxShadow: i18n.language === l.code ? "0 1px 6px rgba(0,0,0,0.08)" : "none" }}>
                   <img src={l.flag} alt={l.label} className="w-5 h-auto rounded-sm" width="20" height="15" loading="lazy" />
                   <span className="text-[10px] font-bold leading-none hidden sm:inline" style={{ color: i18n.language === l.code ? C.primary : "#666" }}>{l.label}</span>
