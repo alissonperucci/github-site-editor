@@ -737,7 +737,7 @@ export default function Index() {
       </section>
 
       {/* GALERIA DE VÍDEOS */}
-      <section ref={revealGaleria} className="py-10 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section className="py-10 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight" style={{ color: C.primary }}>
