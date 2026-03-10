@@ -620,11 +620,7 @@ export default function Index() {
                 <CTAButton href={APP_URL} large className="w-full sm:w-auto">{t("hero.ctaPrimary")}</CTAButton>
                 {/* Trust badges */}
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 mt-3 opacity-50">
-                  {[
-                    { icon: "🌐", label: "API Oficial" },
-                    { icon: "💳", label: "Pix ou Cartão" },
-                    { icon: "👥", label: "+50 mil Usuários Ativos" },
-                  ].map((badge, i) => (
+                  {(t("hero.trustBadges", { returnObjects: true }) as any[]).map((badge: any, i: number) => (
                     <React.Fragment key={i}>
                       {i > 0 && <div className="hidden sm:block w-px h-3 bg-gray-300" />}
                       <div className="flex items-center gap-1.5">
