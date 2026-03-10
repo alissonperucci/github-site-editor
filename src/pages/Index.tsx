@@ -756,7 +756,7 @@ export default function Index() {
                 </div>
               ))}
               <div className="col-span-1 sm:col-span-2 mt-2">
-                <CTAButton href={APP_URL} large className="w-full sm:w-auto">Teste Grátis agora</CTAButton>
+                <CTAButton href={APP_URL} large className="w-full sm:w-auto">{t("howItWorks.ctaButton")}</CTAButton>
               </div>
             </div>
             <div className="flex-shrink-0 flex justify-center">
