@@ -878,7 +878,7 @@ export default function Index() {
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})`, boxShadow: `0 6px 24px -6px ${C.cta}88` }}>
               {t("affiliate.cta")}
             </a>
-            <p className="mt-2.5 text-[10px]" style={{ color: "rgba(255,255,255,0.35)" }}>Pagamentos via Hotmart — a maior plataforma de afiliados do mundo</p>
+            <p className="mt-2.5 text-[10px]" style={{ color: "rgba(255,255,255,0.35)" }}>{t("affiliate.hotmartNote")}</p>
           </div>
         </div>
       </section>
