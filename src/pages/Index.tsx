@@ -679,12 +679,10 @@ export default function Index() {
               <div className="text-center mb-6">
                 <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                   <span className="text-lg">⭐</span>
-                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Reconhecimento Nacional</span>
+                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>{t("recognition.badge")}</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
-                  O <span style={{ color: "#D520C3" }}>#1 em Automação</span> para Afiliados, Produtores de Conteúdo e Empresas no Brasil
-                </h2>
-                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Nos maiores programas de afiliados do Brasil</p>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white" dangerouslySetInnerHTML={{ __html: t("recognition.title").replace('<highlight>', '<span style="color:#D520C3">').replace('</highlight>', '</span>') }} />
+                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>{t("recognition.sub")}</p>
               </div>
               {/* Marquee de plataformas */}
               <div className="marquee-container">
