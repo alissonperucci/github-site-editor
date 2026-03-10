@@ -798,7 +798,7 @@ export default function Index() {
             <p className="text-sm font-medium" style={{ color: "#cc0000" }}>{t("stats.warning")}</p>
           </div>
           <div className="mt-6 text-center">
-            <CTAButton href={APP_URL} large>Planos A Partir De R$ 39,90/Mês →</CTAButton>
+            <CTAButton href={APP_URL} large>{t("stats.ctaButton")}</CTAButton>
           </div>
         </div>
       </section>
