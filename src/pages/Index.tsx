@@ -701,10 +701,10 @@ export default function Index() {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                 <span className="text-lg">📰</span>
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Em Destaque</span>
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>{t("recognition.pressBadge")}</span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h2>
-              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>Presença nos principais veículos de comunicação do Brasil</p>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">{t("recognition.pressTitle")}</h2>
+              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>{t("recognition.pressSub")}</p>
               {/* Marquee de imprensa */}
               <div className="marquee-container">
                 <div className="marquee-track marquee-reverse">
