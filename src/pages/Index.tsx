@@ -397,10 +397,10 @@ function SectionDivider({ from, to, flip = false }: { from: string; to: string; 
 
 function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
   const [currentVideo, setCurrentVideo] = useState(videos?.[0] ?? partnerVideosNew[0]);
+  const [playerLoaded, setPlayerLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   if (!videos || videos.length === 0) return null;
-
 
   const getYouTubeId = (url: string) => {
     if (!url) return null;
@@ -412,19 +412,46 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
   const youtubeId = getYouTubeId(currentVideo.videoUrl);
   const isCurrentYouTube = isYouTube(currentVideo.videoUrl);
 
+  // Reset facade when switching videos
+  const handleVideoSwitch = (video: typeof currentVideo) => {
+    setCurrentVideo(video);
+    setPlayerLoaded(false);
+    if (videoRef.current && !isYouTube(video.videoUrl)) videoRef.current.load();
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 items-start">
-      {/* Player - takes more space */}
+      {/* Player */}
       <div className="lg:col-span-3 rounded-2xl overflow-hidden shadow-lg order-1" style={{ background: "#fff", border: "1.5px solid #e8e8e8" }}>
         <div className="relative w-full aspect-video bg-black">
           {isCurrentYouTube && youtubeId ? (
-            <iframe width="100%" height="100%" loading="lazy"
-              src={`https://www.youtube.com/embed/${youtubeId}`}
-              title={currentVideo.title} frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen className="w-full h-full" />
+            playerLoaded ? (
+              <iframe width="100%" height="100%"
+                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                title={currentVideo.title} frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen className="w-full h-full" />
+            ) : (
+              <button
+                className="w-full h-full relative cursor-pointer border-0 p-0 bg-black group"
+                onClick={() => setPlayerLoaded(true)}
+                aria-label={`Reproduzir ${currentVideo.title}`}>
+                <img
+                  src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+                  alt={currentVideo.title}
+                  loading="lazy" decoding="async"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                  <svg width="68" height="48" viewBox="0 0 68 48" className="drop-shadow-lg">
+                    <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/>
+                    <path d="M45 24L27 14v20" fill="white"/>
+                  </svg>
+                </div>
+              </button>
+            )
           ) : (
-            <video ref={videoRef} controls poster={currentVideo.thumbnail} className="w-full h-full">
+            <video ref={videoRef} controls poster={currentVideo.thumbnail} preload="none" className="w-full h-full">
               <source src={currentVideo.videoUrl} type="video/mp4" />
             </video>
           )}
