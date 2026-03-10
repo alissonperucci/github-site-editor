@@ -628,7 +628,7 @@ export default function Index() {
         </div>
 
         {/* TAGLINE */}
-        <div className="w-full px-4 sm:px-6 pb-8 sm:pb-10 mt-2">
+        <div ref={revealTagline} className="w-full px-4 sm:px-6 pb-8 sm:pb-10 mt-2">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-6">
               <p className="font-bold leading-snug" style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)", color: C.primary }}>{t("tagline")}</p>
