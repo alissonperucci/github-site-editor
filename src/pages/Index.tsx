@@ -547,6 +547,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg, color: C.text }}>
+    <main>
 
       {/* MODAL VÍDEO IMPRENSA */}
       {pressVideoOpen && (
