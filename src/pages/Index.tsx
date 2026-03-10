@@ -704,7 +704,7 @@ export default function Index() {
                   {[...platforms, ...platforms].map((p, i) => (
                     <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0"
                       style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "140px" }}>
-                      <img src={p.logo} alt={p.name} loading="lazy" decoding="async" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />
+                      <img src={p.logo} alt={p.name} loading="lazy" decoding="async" width="56" height="56" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />
                       <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{p.name}</span>
                     </div>
                   ))}
