@@ -566,7 +566,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
         style={{ background: "rgba(255,255,255,0.97)", backdropFilter: "blur(14px)", borderBottom: scrolled ? "2px solid #e5e7eb" : "1px solid transparent", boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.06)" : "none" }}>
         <div className="max-w-6xl mx-auto px-2 sm:px-6 py-1.5 sm:py-2.5 flex items-center justify-between gap-1.5">
-          <img src={instaNinjaLogo} alt="InstaNinja" className="h-9 sm:h-9 w-auto flex-shrink-0" loading="eager" />
+          <img src={instaNinjaLogo} alt="InstaNinja" className="h-9 sm:h-9 w-auto flex-shrink-0" width="119" height="36" loading="eager" />
           <div className="hidden md:flex items-center gap-5 text-sm font-medium">
             <a href="#como-funciona" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.howItWorks")}</a>
             <a href="#recursos" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.features")}</a>
