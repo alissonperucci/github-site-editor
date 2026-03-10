@@ -307,7 +307,7 @@ const PhoneCarousel = memo(function PhoneCarousel() {
                 ) : (
                   <div className="relative w-full h-full cursor-pointer group" onClick={() => setPlayingId(ytId)}>
                     <img src={`https://img.youtube.com/vi/${ytId}/hqdefault.jpg`}
-                      alt={`Depoimento ${i + 1}`} loading="lazy" decoding="async"
+                      alt={`Depoimento ${i + 1}`} loading="lazy" decoding="async" width="480" height="360"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
                       <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
