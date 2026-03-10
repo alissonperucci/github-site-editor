@@ -69,7 +69,7 @@ const partnerVideosNew = [
     title: "RAFAELE MONTEIRO - Afiliado Shopee Expert",
     name: "RAFAELE MONTEIRO",
     duration: "08:57",
-    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou mais de 15 mil alunos no ASE a alcançarem entre R$ 3 mil e R$ 10 mil por mês, mesmo começando do zero. Com 231 mil seguidores, demonstra na prática que é possível vender todos os dias como afiliada — inclusive enquanto dorme — sem precisar passar o dia inteiro no celular. Para garantir atendimento rápido, respostas precisas e não perder vendas, Rafaele usa o InstaNinja como aliada nas automações.",
+    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou <strong>mais de 15 mil alunos</strong> a alcançarem entre <strong>R$ 3 mil e R$ 10 mil por mês</strong>, mesmo começando do zero. Com <strong>231 mil seguidores</strong>, demonstra na prática que é possível <strong>vender todos os dias como afiliada</strong> — inclusive enquanto dorme — sem precisar passar o dia inteiro no celular. Para garantir atendimento rápido, respostas precisas e <strong>não perder vendas</strong>, Rafaele usa o <strong>InstaNinja</strong> como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Rafaele.mp4",
     thumbnail: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Afiliado_Shopee_Expert_eurafaelemonteiro.webp"
