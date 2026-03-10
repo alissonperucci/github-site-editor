@@ -183,12 +183,7 @@ const purpleGrad = {
   backgroundClip: "text" as const,
 };
 
-const segmentCards = [
-  { icon: "🛍️", title: "Afiliados", desc: "Automatize respostas no Instagram e envie ofertas e links de afiliado na hora." },
-  { icon: "📱", title: "Criadores de Conteúdo", desc: "Automatize respostas e transforme comentários em seguidores." },
-  { icon: "🏪", title: "Pequenas Empresas", desc: "Quem manda mensagem quer resposta imediata. Se não houver resposta, ele sai." },
-  { icon: "🏢", title: "Grandes Empresas", desc: "Use mensagens de boas-vindas automáticas para responder na hora." },
-];
+// segmentCards moved to translation keys
 
 const storesList = [
   { logo: amazonLogo, name: "Amazon" },
