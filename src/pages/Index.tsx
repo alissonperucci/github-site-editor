@@ -65,34 +65,114 @@ const phoneVideos = [
 
 const partnerVideosNew = [
   {
-    id: "RAFAELE_MONTEIRO_0",
+    id: "RAFAELE_MONTEIRO___AFILIADO_SHOPEE_EXPERT_0",
     title: "RAFAELE MONTEIRO - Afiliado Shopee Expert",
     name: "RAFAELE MONTEIRO",
     duration: "08:57",
-    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou mais de 15 mil alunos no ASE a alcançarem entre R$ 3 mil e R$ 10 mil por mês.",
+    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou mais de 15 mil alunos no ASE a alcançarem entre R$ 3 mil e R$ 10 mil por mês, mesmo começando do zero. Com 231 mil seguidores, demonstra na prática que é possível vender todos os dias como afiliada — inclusive enquanto dorme — sem precisar passar o dia inteiro no celular. Para garantir atendimento rápido, respostas precisas e não perder vendas, Rafaele usa o InstaNinja como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Rafaele.mp4",
     thumbnail: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Afiliado_Shopee_Expert_eurafaelemonteiro.webp"
   },
   {
-    id: "DEBORAH_OLIVEIRA_1",
+    id: "D_BORAH_OLIVEIRA___AFILIADA_TOP_DO_BRASIL___R_3_MILH_ES_EM_VENDAS_1",
     title: "Déborah Oliveira — Afiliada Top do Brasil | R$3 milhões em vendas",
-    name: "Déborah Oliveira",
+    name: "Déborah Oliveira — Afiliada Top do Brasil",
     duration: "01:08",
-    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou mais de 10 mil alunos a faturarem vendendo na Shopee, Amazon e Kiwify.",
+    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou mais de 10 mil alunos a faturarem vendendo na Shopee, Amazon e Kiwify — e sozinha já ultrapassou os 3 milhões em vendas. Com quase 200 mil seguidores, ela mostra que dá, sim, para vender todos os dias como afiliada, mesmo sem aparecer — e sem ficar o dia todo no celular. Para escalar o atendimento, responder mais rápido e não perder nenhuma venda, Déborah usa o InstaNinja como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.youtube.com/shorts/pWwCWtFcWNo?feature=share",
     thumbnail: "https://img.youtube.com/vi/pWwCWtFcWNo/hqdefault.jpg"
   },
   {
-    id: "CHRIS_PRADO_2",
+    id: "CHRIS_PRADO___MARKETING_DE_CONTE_DO_2",
     title: "Chris Prado | Marketing de Conteúdo",
     name: "Chris Prado",
     duration: "01:20",
-    desc: "Chris Prado é especialista em marketing de conteúdo e ajuda empreendedores a criarem estratégias eficazes para suas redes sociais.",
+    desc: "Chris Prado é especialista em marketing de conteúdo e ajuda empreendedores a criarem estratégias eficazes para suas redes sociais. Com anos de experiência, ela compartilha dicas valiosas para engajar a audiência e converter seguidores em clientes. Ela utiliza o InstaNinja para otimizar suas interações e garantir que nenhuma mensagem fique sem resposta.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.youtube.com/shorts/8Mpw6cJEgvg?feature=share",
     thumbnail: "https://img.youtube.com/vi/8Mpw6cJEgvg/hqdefault.jpg"
+  },
+  {
+    id: "ISLAM_SOUZA___MAIS_DE_13_MILH_ES_3",
+    title: "Islam Souza - Mais de 13 Milhões",
+    name: "Islam Souza",
+    duration: "2:56",
+    desc: "Islam Souza é um dos maiores nomes em vendas online, com mais de 13 milhões em faturamento. Ele ensina técnicas avançadas para escalar negócios digitais e maximizar lucros. Islam confia no InstaNinja para automatizar o atendimento e garantir que todas as oportunidades de venda sejam aproveitadas.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/-bJsPMlAIco?feature=share",
+    thumbnail: "https://img.youtube.com/vi/-bJsPMlAIco/hqdefault.jpg"
+  },
+  {
+    id: "MARI_GIMENES___MATERNIDADE_REAL___FITNESS_4",
+    title: "Mari Gimenes | Maternidade real | Fitness",
+    name: "Mari Gimenes",
+    duration: "2:20",
+    desc: "Mari Gimenes compartilha sua jornada de maternidade e fitness, inspirando milhares de mulheres a cuidarem de si mesmas. Ela usa o InstaNinja para gerenciar a interação com sua comunidade, respondendo a dúvidas e enviando informações importantes de forma automática, permitindo que ela se dedique mais à criação de conteúdo.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.instaninja.com.br/wp-content/uploads/2025/06/AQMhYHG8bgEnGdlloOhFOMQgdyyOryJAo6N0km8t7JP4fcEDQG3mZBHH09IclNTQ-3Jein0oJAHwgYmotI9YbaqzPhk98LbMiU90wzk.mp4",
+    thumbnail: "https://www.instaninja.com.br/wp-content/uploads/2025/06/mil-reais-shopee-afiliada.png"
+  },
+  {
+    id: "NARLA_AGUIAR___JORNALISTA_E_COMUNICADORA_5",
+    title: "Narla Aguiar - Jornalista e Comunicadora",
+    name: "Narla Aguiar",
+    duration: "1:05",
+    desc: "Narla Aguiar é uma jornalista e comunicadora experiente, conhecida por sua habilidade em transmitir informações de forma clara e envolvente. Ela utiliza o InstaNinja para automatizar a comunicação com sua audiência, garantindo que suas mensagens sejam entregues de forma eficiente e personalizada.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/fAZPYb2lAHI?feature=share",
+    thumbnail: "https://img.youtube.com/vi/fAZPYb2lAHI/hqdefault.jpg"
+  },
+  {
+    id: "RIANNE_NETTO___DO_BRASIL_PARA_O_MUNDO_COM_V_DEOS_CURTOS__277K_6",
+    title: "Rianne Netto | Do Brasil para o mundo com vídeos curtos +277K",
+    name: "Rianne Netto",
+    duration: "0:48",
+    desc: "Rianne Netto é uma empreendedora digital que expandiu seus negócios para o mercado internacional. Ela compartilha suas estratégias para alcançar sucesso global e como o InstaNinja a ajuda a manter a comunicação com clientes de diferentes países, garantindo um atendimento de excelência e sem barreiras.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/5b6SvpZe91s?feature=share",
+    thumbnail: "https://img.youtube.com/vi/5b6SvpZe91s/hqdefault.jpg"
+  },
+  {
+    id: "KAROL_DUARTE____20K_SEGUIDORES_COM_UM__NICO_V_DEO_7",
+    title: "Karol Duarte | +20K Seguidores com um único vídeo",
+    name: "Karol Duarte",
+    duration: "0:39",
+    desc: "Karol Duarte alcançou mais de 20 mil seguidores com um único vídeo e compartilha suas técnicas para criar conteúdo viral. Ela usa o InstaNinja para gerenciar o grande volume de interações que recebe, garantindo que todos os seus seguidores sejam atendidos de forma rápida e eficiente.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/YyjmK15ezKg?feature=share",
+    thumbnail: "https://img.youtube.com/vi/YyjmK15ezKg/hqdefault.jpg"
+  },
+  {
+    id: "CANAVARRO___SHOWS__FARRA_E_AUTOMA__O_8",
+    title: "Canavarro | Shows, Farra e Automação",
+    name: "Canavarro",
+    duration: "0:52",
+    desc: "Canavarro é um artista que usa o InstaNinja para gerenciar a comunicação com seus fãs e promover seus shows. A automação permite que ele responda a comentários e envie informações sobre ingressos e datas de apresentações de forma automática, facilitando a interação com seu público.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/DodfEhJg6r4?feature=share",
+    thumbnail: "https://img.youtube.com/vi/DodfEhJg6r4/hqdefault.jpg"
+  },
+  {
+    id: "CANAL_FABIANA_PRADO_11",
+    title: "Canal Fabiana Prado",
+    name: "Canal Fabiana Prado",
+    duration: "18:40",
+    desc: "Fabiana Prado compartilha tutoriais detalhados e dicas de empreendedorismo em seu canal. Ela utiliza o InstaNinja para gerenciar as interações em seu perfil do Instagram, garantindo que seus seguidores recebam suporte e informações sobre seus cursos de forma eficiente.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/1dI2l1OphN0?feature=share",
+    thumbnail: "https://img.youtube.com/vi/1dI2l1OphN0/hqdefault.jpg"
+  },
+  {
+    id: "CCLOSETDANA___CEO_SHOP_THERAPY_13",
+    title: "Cclosetdana - CEO SHOP THERAPY",
+    name: "Cclosetdana",
+    duration: "0:57",
+    desc: "Dana é a CEO da Shop Therapy e usa o InstaNinja para gerenciar o atendimento ao cliente de sua loja no Instagram. A automação permite que ela envie links de produtos e responda a dúvidas sobre pedidos de forma instantânea, melhorando a experiência de compra de seus clientes.",
+    bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
+    videoUrl: "https://www.youtube.com/shorts/P_HAVUXxXOA?feature=share",
+    thumbnail: "https://img.youtube.com/vi/P_HAVUXxXOA/hqdefault.jpg"
   },
 ];
 
@@ -682,10 +762,10 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 leading-tight" style={{ color: C.primary }}>
-              Todo mundo já está usando o InstaNinja. E você?
+              Todo mundo já está usando o InstaNinja. E você? O que está fazendo para não perder vendas, clientes e seguidores?
             </h2>
             <p className="text-sm sm:text-base max-w-4xl mx-auto" style={{ color: C.muted }}>
-              Não é só para grandes influenciadores — qualquer pessoa pode vender mais e ganhar tempo com o InstaNinja.
+              Não é só para grandes influenciadores — qualquer pessoa pode vender mais e ganhar tempo com o InstaNinja. É simples, acessível e rápido de ativar. Somos a maior automação de Instagram da América do Sul 🌎, prontos para colocar você no nível dos maiores.
             </p>
           </div>
           <VideoGallery videos={partnerVideosNew} />
