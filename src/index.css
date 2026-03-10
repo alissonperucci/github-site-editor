@@ -5,7 +5,11 @@
 /* ── Base ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -13,6 +17,14 @@ body {
   background: #F8F9FA;
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+/* Improve image rendering */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 @layer base {
@@ -61,14 +73,9 @@ body {
   position: relative;
   width: 340px;
   max-width: 100%;
-  padding-bottom: 52px;
+  padding-bottom: 48px;
   background: transparent;
-}
-
-@media (max-width: 768px) {
-  .phone-carousel-wrapper {
-    padding-bottom: 92px;
-  }
+  contain: layout style;
 }
 
 .phone-track {
@@ -79,6 +86,7 @@ body {
   scroll-behavior: smooth;
   padding: 6px 10px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 .phone-track::-webkit-scrollbar { display: none; }
 
@@ -99,6 +107,7 @@ body {
     0 20px 50px rgba(0,0,0,0.15),
     0 0 0 2px rgba(255,255,255,1);
   position: relative;
+  contain: content;
 }
 
 .phone-notch {
@@ -135,19 +144,19 @@ body {
   position: absolute;
   top: 46%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 0;
   background: rgba(153,0,204,0.85);
   color: #fff;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(6px);
-  transition: .2s;
+  transition: background .2s, transform .2s;
   z-index: 20;
   line-height: 1;
   box-shadow: 0 4px 16px rgba(153,0,204,0.35);
@@ -156,8 +165,8 @@ body {
   background: rgba(213,32,195,0.9);
   transform: translateY(-50%) scale(1.08);
 }
-.phone-prev { left: -18px; }
-.phone-next { right: -18px; }
+.phone-prev { left: -16px; }
+.phone-next { right: -16px; }
 
 /* Dots */
 .phone-dots {
@@ -166,65 +175,85 @@ body {
   bottom: 4px;
   transform: translateX(-50%);
   display: flex;
-  gap: 5px;
+  gap: 4px;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 260px;
-  padding: 6px 10px;
+  padding: 5px 8px;
   border-radius: 999px;
-  background: rgba(153,0,204,0.12);
+  background: rgba(153,0,204,0.1);
   z-index: 30;
 }
 
-@media (max-width: 768px) {
-  .phone-dots {
-    bottom: -40px;
-  }
-}
 .phone-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(153,0,204,0.3);
-  transition: .25s;
+  background: rgba(153,0,204,0.25);
+  transition: width .25s, background .25s;
   cursor: pointer;
 }
 .phone-dot.active {
   width: 16px;
+  border-radius: 3px;
   background: #9900CC;
 }
 
-/* Animations */
+/* Animations - GPU accelerated */
 @keyframes float-1 {
-  0% { transform: translate(0, 0px); }
-  50% { transform: translate(0, 10px); }
-  100% { transform: translate(0, 0px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, 10px, 0); }
 }
-
 @keyframes float-2 {
-  0% { transform: translate(0, 0px); }
-  50% { transform: translate(0, -10px); }
-  100% { transform: translate(0, 0px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
 }
-
 @keyframes float-3 {
-  0% { transform: translate(0, 0px); }
-  50% { transform: translate(0, 10px); }
-  100% { transform: translate(0, 0px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, 8px, 0); }
 }
 
-.animate-float-1 { animation: float-1 4s ease-in-out infinite; }
-.animate-float-2 { animation: float-2 5s ease-in-out infinite; }
-.animate-float-3 { animation: float-3 4.5s ease-in-out infinite; }
+.animate-float-1 { animation: float-1 4s ease-in-out infinite; will-change: transform; }
+.animate-float-2 { animation: float-2 5s ease-in-out infinite; will-change: transform; }
+.animate-float-3 { animation: float-3 4.5s ease-in-out infinite; will-change: transform; }
 
-/* Mobile Responsiveness */
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-1, .animate-float-2, .animate-float-3 { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ── Mobile breakpoints ─────────────────────────────────────── */
 @media (max-width: 480px) {
   .phone-nav { display: none; }
   .phone-slide { flex: 0 0 88%; scroll-snap-align: start; }
-  .phone-carousel-wrapper { width: 100%; padding: 0 12px; }
+  .phone-carousel-wrapper { width: 100%; padding: 0 8px; padding-bottom: 56px; }
+  .phone-dots { bottom: 0; }
 }
 
 @media (max-width: 768px) {
-  .tagline-section { margin-top: 4rem !important; }
-  .tagline-container { margin-top: 5rem !important; }
+  .phone-carousel-wrapper { padding-bottom: 56px; }
+  .phone-dots { bottom: 0; }
+}
+
+/* ── Section spacing utility ──────────────────────────────── */
+.section-tight { padding-top: 3rem; padding-bottom: 3rem; }
+
+@media (min-width: 640px) {
+  .section-tight { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+/* ── Smooth scrollbar for video list ──────────────────────── */
+.video-list-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.video-list-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.video-list-scroll::-webkit-scrollbar-thumb {
+  background: rgba(153,0,204,0.2);
+  border-radius: 2px;
+}
+.video-list-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(153,0,204,0.4);
 }
