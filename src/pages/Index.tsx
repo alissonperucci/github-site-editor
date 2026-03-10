@@ -780,7 +780,7 @@ export default function Index() {
       <SectionDivider from={C.statsBg} to={C.bg} />
 
       {/* FEATURES */}
-      <section id="recursos" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
+      <section ref={revealFeatures} id="recursos" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-10">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("features.badge")}</span>
