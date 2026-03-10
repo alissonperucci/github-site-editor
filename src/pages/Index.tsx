@@ -717,7 +717,7 @@ export default function Index() {
                 <span className="text-lg">📰</span>
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Em Destaque</span>
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h3>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h2>
               <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>Presença nos principais veículos de comunicação do Brasil</p>
               {/* Marquee de imprensa */}
               <div className="marquee-container">
