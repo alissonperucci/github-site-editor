@@ -581,7 +581,7 @@ export default function Index() {
             <a href={APP_URL} target="_blank" rel="noreferrer"
               className="text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
-              Entrar
+              {t("nav.login")}
             </a>
           </div>
         </div>
