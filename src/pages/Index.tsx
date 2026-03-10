@@ -823,7 +823,7 @@ export default function Index() {
       </section>
 
       {/* AFFILIATE */}
-      <section className="py-14 sm:py-16 px-4 sm:px-6" style={{ background: C.dark }}>
+      <section ref={revealAffiliate} className="py-14 sm:py-16 px-4 sm:px-6" style={{ background: C.dark }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: "#f5c842" }}>{t("affiliate.badge")}</span>
