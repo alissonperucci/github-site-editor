@@ -651,48 +651,54 @@ export default function Index() {
       </section>
 
       {/* RECONHECIMENTO NACIONAL */}
-      <section ref={revealReconhecimento} className="py-12 sm:py-16 px-4 sm:px-6" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 100%)" }}>
+      <section ref={revealReconhecimento} className="py-12 sm:py-16 px-4 sm:px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 50%, #471359 100%)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-10" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)" }}>
+          <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-10" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(10px)" }}>
             {/* Plataformas */}
-            <div className="mb-8 sm:mb-10 pb-8 sm:pb-10 border-b" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
+            <div className="mb-8 sm:mb-10 pb-8 sm:pb-10 border-b" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
               <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full" style={{ background: "rgba(213,32,195,0.2)", border: "1px solid rgba(213,32,195,0.4)" }}>
+                <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                   <span className="text-lg">⭐</span>
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Reconhecimento Nacional</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
                   O <span style={{ color: "#D520C3" }}>#1 em Automação</span> para Afiliados, Produtores de Conteúdo e Empresas no Brasil
                 </h3>
-                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>Nos maiores programas de afiliados do Brasil</p>
+                <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Nos maiores programas de afiliados do Brasil</p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                {platforms.map((p, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-3 sm:p-5 rounded-xl transition-all hover:scale-105"
-                    style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                    <img src={p.logo} alt={p.name} loading="lazy" decoding="async" className="w-10 h-10 sm:w-14 sm:h-14 object-contain" />
-                    <span className="text-[10px] sm:text-xs font-semibold text-center" style={{ color: "rgba(255,255,255,0.85)" }}>{p.name}</span>
-                  </div>
-                ))}
+              {/* Marquee de plataformas */}
+              <div className="marquee-container">
+                <div className="marquee-track">
+                  {[...platforms, ...platforms].map((p, i) => (
+                    <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0"
+                      style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "140px" }}>
+                      <img src={p.logo} alt={p.name} loading="lazy" decoding="async" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" />
+                      <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{p.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             {/* Imprensa */}
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full" style={{ background: "rgba(213,32,195,0.2)", border: "1px solid rgba(213,32,195,0.4)" }}>
+              <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full" style={{ background: "rgba(213,32,195,0.15)", border: "1px solid rgba(213,32,195,0.35)" }}>
                 <span className="text-lg">📰</span>
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Em Destaque</span>
               </div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">O Maior da América Latina</h3>
-              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>Presença nos principais veículos de comunicação do Brasil</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                {pressLogos.map((logo, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2 p-3 sm:p-5 rounded-xl transition-all hover:scale-105 cursor-pointer"
-                    style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
-                    onClick={() => setPressVideoOpen(true)}>
-                    <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
-                    <span className="text-[10px] sm:text-xs font-semibold text-center" style={{ color: "rgba(255,255,255,0.85)" }}>{logo.name}</span>
-                  </div>
-                ))}
+              <p className="text-xs sm:text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>Presença nos principais veículos de comunicação do Brasil</p>
+              {/* Marquee de imprensa */}
+              <div className="marquee-container">
+                <div className="marquee-track marquee-reverse">
+                  {[...pressLogos, ...pressLogos].map((logo, i) => (
+                    <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0 cursor-pointer hover:scale-105 transition-transform"
+                      style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}
+                      onClick={() => setPressVideoOpen(true)}>
+                      <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+                      <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{logo.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
