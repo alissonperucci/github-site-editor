@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback, useEffect, memo, lazy } from "rea
 
 import { useTranslation } from "react-i18next";
 import "@/i18n";
-import heroPhoneGif from "@/assets/hero-phone.gif";
+import heroPhoneVideo from "@/assets/hero-phone.mp4";
 import instaNinjaLogo from "@/assets/instaninja-logo.webp";
 import instagramApiBadge from "@/assets/instagram-api-badge.png";
 
@@ -775,9 +775,10 @@ export default function Index() {
             </div>
             <div className="flex-shrink-0 flex justify-center">
               <div className="relative" style={{ filter: `drop-shadow(0 20px 40px ${C.primary}30)` }}>
-                <img src={heroPhoneGif} alt="InstaNinja no celular" loading="lazy" decoding="async"
+                <video src={heroPhoneVideo} autoPlay loop muted playsInline
                   width="256" height="458"
-                  className="w-48 lg:w-64 rounded-2xl" style={{ boxShadow: "0 24px 48px -12px rgba(0,0,0,0.2)" }} />
+                  className="w-48 lg:w-64 rounded-2xl" style={{ boxShadow: "0 24px 48px -12px rgba(0,0,0,0.2)" }}>
+                </video>
                 <div className="absolute -top-2 -right-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white shadow-lg"
                   style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
                   No piloto automático
