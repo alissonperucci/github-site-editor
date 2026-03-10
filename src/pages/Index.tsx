@@ -661,7 +661,7 @@ export default function Index() {
                   <span className="text-2xl">{seg.icon}</span>
                   <span className="font-extrabold text-xs sm:text-sm" style={{ color: C.text }}>{seg.title}</span>
                   <span className="text-[10px] sm:text-[11px] leading-relaxed" style={{ color: C.muted }}>{seg.desc}</span>
-                  <span className="text-[10px] sm:text-[11px] font-bold mt-auto" style={{ color: C.cta }}>Teste Grátis →</span>
+                  <span className="text-[10px] sm:text-[11px] font-bold mt-auto" style={{ color: C.cta }}>{seg.cta}</span>
                 </a>
               ))}
             </div>
