@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect, memo, lazy } from "react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 import heroPhoneGif from "@/assets/hero-phone.gif";
@@ -544,17 +544,6 @@ export default function Index() {
 
   const PRESS_VIDEO_URL = "https://www.instaninja.com.br/videos/instaninja_Divulganinja_ZAP24_Imprenssa.mp4";
 
-  const revealTagline = useScrollReveal();
-  const revealReconhecimento = useScrollReveal();
-  const revealGaleria = useScrollReveal();
-  const revealComoFunciona = useScrollReveal();
-  const revealStats = useScrollReveal();
-  const revealFeatures = useScrollReveal();
-  const revealTriggers = useScrollReveal();
-  const revealAffiliate = useScrollReveal();
-  const revealDivulga = useScrollReveal();
-  const revealFaq = useScrollReveal();
-  const revealFooterCta = useScrollReveal();
 
   return (
     <div className="min-h-screen font-sans overflow-x-hidden" style={{ background: C.bg, color: C.text }}>
@@ -670,7 +659,7 @@ export default function Index() {
         </div>
 
         {/* TAGLINE */}
-        <div ref={revealTagline} className="w-full px-4 sm:px-6 pb-8 sm:pb-10 mt-2">
+        <div className="w-full px-4 sm:px-6 pb-8 sm:pb-10 mt-2">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-6">
               <p className="font-bold leading-snug" style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)", color: C.primary }}>{t("tagline")}</p>
@@ -693,7 +682,7 @@ export default function Index() {
       </section>
 
       {/* RECONHECIMENTO NACIONAL */}
-      <section ref={revealReconhecimento} className="py-12 sm:py-16 px-4 sm:px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 50%, #471359 100%)" }}>
+      <section className="py-12 sm:py-16 px-4 sm:px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 50%, #471359 100%)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-10" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(10px)" }}>
             {/* Plataformas */}
@@ -748,7 +737,7 @@ export default function Index() {
       </section>
 
       {/* GALERIA DE VÍDEOS */}
-      <section ref={revealGaleria} className="py-10 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section className="py-10 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold mb-2 leading-tight" style={{ color: C.primary }}>
@@ -763,7 +752,7 @@ export default function Index() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section ref={revealComoFunciona} id="como-funciona" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section id="como-funciona" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-10">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("howItWorks.badge")}</span>
@@ -800,7 +789,7 @@ export default function Index() {
       <SectionDivider from={C.bg} to={C.statsBg} />
 
       {/* STATS */}
-      <section ref={revealStats} className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
+      <section className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("stats.badge")}</span>
@@ -828,7 +817,7 @@ export default function Index() {
       <SectionDivider from={C.statsBg} to={C.bg} />
 
       {/* FEATURES */}
-      <section ref={revealFeatures} id="recursos" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
+      <section id="recursos" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-10">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("features.badge")}</span>
@@ -851,7 +840,7 @@ export default function Index() {
       <SectionDivider from={C.statsBg} to={C.bg} />
 
       {/* TRIGGERS */}
-      <section ref={revealTriggers} className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: C.cta }}>{t("triggers.badge")}</span>
@@ -871,7 +860,7 @@ export default function Index() {
       </section>
 
       {/* AFFILIATE */}
-      <section ref={revealAffiliate} className="py-14 sm:py-16 px-4 sm:px-6" style={{ background: C.dark }}>
+      <section className="py-14 sm:py-16 px-4 sm:px-6" style={{ background: C.dark }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase" style={{ color: "#f5c842" }}>{t("affiliate.badge")}</span>
@@ -906,7 +895,7 @@ export default function Index() {
       </section>
 
       {/* DIVULGANINJA */}
-      <section ref={revealDivulga} className="py-6 sm:py-8 px-4 sm:px-6" style={{ background: C.statsBg }}>
+      <section className="py-6 sm:py-8 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center" style={{ background: "#fff", border: "1.5px solid #e8e8e8", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}>
             <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#25D366" }}>CONHEÇA TAMBÉM</span>
@@ -945,7 +934,7 @@ export default function Index() {
       <SectionDivider from={C.statsBg} to={C.bg} />
 
       {/* FAQ */}
-      <section ref={revealFaq} id="faq" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
+      <section id="faq" className="py-12 sm:py-14 px-4 sm:px-6" style={{ background: C.bg }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10 items-start">
             <div className="md:col-span-2">
@@ -967,7 +956,7 @@ export default function Index() {
 
       {/* FOOTER */}
       <footer style={{ background: C.dark }}>
-        <div ref={revealFooterCta} className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+        <div className="py-10 sm:py-12 px-4 sm:px-6 border-b" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">Teste agora mesmo e veja como automatizar suas interações no Instagram pode transformar suas vendas.</h2>
             <p className="text-xs sm:text-sm mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Teste o plano gratuito do InstaNinja e comece a responder comentários e enviar links automaticamente.</p>
