@@ -458,7 +458,7 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
         </div>
         <div className="p-4 sm:p-5">
           <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>Descrição</h3>
-          <p className="text-xs sm:text-sm mb-3 leading-relaxed" style={{ color: C.muted }}>{currentVideo.desc}</p>
+          <p className="text-xs sm:text-sm mb-3 leading-relaxed [&_strong]:font-bold [&_strong]:text-foreground" style={{ color: C.muted }} dangerouslySetInnerHTML={{ __html: currentVideo.desc }} />
           <p className="text-xs sm:text-sm font-semibold leading-relaxed" style={{ color: C.primary }}>
             Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
           </p>
