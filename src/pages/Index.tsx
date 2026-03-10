@@ -651,7 +651,7 @@ export default function Index() {
       </section>
 
       {/* RECONHECIMENTO NACIONAL */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 100%)" }}>
+      <section ref={revealReconhecimento} className="py-12 sm:py-16 px-4 sm:px-6" style={{ background: "linear-gradient(135deg, #471359 0%, #6B2E7E 100%)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-10" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)" }}>
             {/* Plataformas */}
