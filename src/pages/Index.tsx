@@ -508,7 +508,7 @@ export default function Index() {
       {pressVideoOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,0.88)" }} onClick={() => setPressVideoOpen(false)}>
           <div className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl bg-black" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setPressVideoOpen(false)} className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full flex items-center justify-center text-white text-lg" style={{ background: "rgba(255,255,255,0.15)" }}>×</button>
+            <button onClick={() => setPressVideoOpen(false)} className="absolute top-2 right-2 z-10 w-10 h-10 rounded-full flex items-center justify-center text-white text-2xl font-bold hover:scale-110 transition-transform" style={{ background: "rgba(0,0,0,0.7)", border: "2px solid rgba(255,255,255,0.5)" }}>✕</button>
             <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 rounded-full px-3 py-1" style={{ background: "rgba(255,186,77,0.9)", color: "#000" }}>
               <span className="text-[11px] font-bold">Imprensa Nacional</span>
             </div>
