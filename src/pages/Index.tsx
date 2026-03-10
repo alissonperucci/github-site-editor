@@ -998,11 +998,11 @@ export default function Index() {
                   </a>
                 </div>
                 <div className="border-t pt-3" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-                  <p className="font-bold text-[10px] text-white mb-2">Selos de Confiança</p>
+                  <p className="font-bold text-[10px] text-white mb-2">{t("trustSeals.title")}</p>
                   <div className="space-y-1 text-[10px]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>API Oficial da Meta</span></div>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>Plano Gratuito</span></div>
-                    <div className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>Cancele quando quiser</span></div>
+                    {trustSealItems.map((item, i) => (
+                      <div key={i} className="flex items-center gap-1.5"><span style={{ color: "#22c55e" }}>✓</span><span>{item}</span></div>
+                    ))}
                   </div>
                 </div>
               </div>
