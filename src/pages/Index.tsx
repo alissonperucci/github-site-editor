@@ -887,7 +887,7 @@ export default function Index() {
       <section className="py-6 sm:py-8 px-4 sm:px-6" style={{ background: C.statsBg }}>
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center" style={{ background: "#fff", border: "1.5px solid #e8e8e8", boxShadow: "0 4px 20px rgba(0,0,0,0.04)" }}>
-            <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#25D366" }}>CONHEÇA TAMBÉM</span>
+            <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: "#25D366" }}>{t("divulganinja.alsoKnow")}</span>
             <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold mt-2 mb-3" style={{ color: C.text }}>
               {t("divulganinja.title")}{" "}
               <span style={{ color: "#25D366" }}>{t("divulganinja.titleWa")}</span>{" "}
