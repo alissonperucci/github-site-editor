@@ -779,6 +779,7 @@ export default function Index() {
                   width="256" height="458"
                   className="w-48 lg:w-64 rounded-2xl" style={{ boxShadow: "0 24px 48px -12px rgba(0,0,0,0.2)" }}>
                 </video>
+                <div className="absolute -top-2 -right-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white shadow-lg"
                   style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
                   No piloto automático
                 </div>
