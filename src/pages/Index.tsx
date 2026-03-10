@@ -834,7 +834,7 @@ export default function Index() {
             ))}
           </div>
           <div className="text-center">
-            <a href={`${APP_URL}/afiliados`} target="_blank" rel="noreferrer"
+            <a href="https://instaninja.com.br/indique-ganhe-link-afiliado-instaninja-hotmart/" target="_blank" rel="noreferrer"
               className="inline-block text-white font-bold text-base sm:text-lg px-8 py-3.5 rounded-xl hover:opacity-90 transition-all w-full sm:w-auto"
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})`, boxShadow: `0 6px 24px -6px ${C.cta}88` }}>
               {t("affiliate.cta")}
