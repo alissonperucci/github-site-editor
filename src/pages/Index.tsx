@@ -922,7 +922,7 @@ export default function Index() {
                 {storesList.map((store, i) => (
                   <div key={i} className="flex flex-col items-center">
                     <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-2" style={{ background: "#f5f5f5", border: "1px solid #e8e8e8" }}>
-                      <img src={store.logo} alt={store.name} loading="lazy" decoding="async" className="w-10 h-10 object-contain" />
+                      <img src={store.logo} alt={store.name} loading="lazy" decoding="async" width="40" height="40" className="w-10 h-10 object-contain" />
                     </div>
                     <span className="text-[10px] font-medium text-center" style={{ color: C.muted }}>{store.name}</span>
                   </div>
