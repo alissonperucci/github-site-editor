@@ -69,7 +69,7 @@ const partnerVideosNew = [
     title: "RAFAELE MONTEIRO - Afiliado Shopee Expert",
     name: "RAFAELE MONTEIRO",
     duration: "08:57",
-    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou mais de 15 mil alunos no ASE a alcançarem entre R$ 3 mil e R$ 10 mil por mês, mesmo começando do zero. Com 231 mil seguidores, demonstra na prática que é possível vender todos os dias como afiliada — inclusive enquanto dorme — sem precisar passar o dia inteiro no celular. Para garantir atendimento rápido, respostas precisas e não perder vendas, Rafaele usa o InstaNinja como aliada nas automações.",
+    desc: "Rafaele Monteiro é especialista em faturamento na Shopee e já auxiliou <strong>mais de 15 mil alunos</strong> a alcançarem entre <strong>R$ 3 mil e R$ 10 mil por mês</strong>, mesmo começando do zero. Com <strong>231 mil seguidores</strong>, demonstra na prática que é possível <strong>vender todos os dias como afiliada</strong> — inclusive enquanto dorme — sem precisar passar o dia inteiro no celular. Para garantir atendimento rápido, respostas precisas e <strong>não perder vendas</strong>, Rafaele usa o <strong>InstaNinja</strong> como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Rafaele.mp4",
     thumbnail: "https://www.instaninja.com.br/wp-content/uploads/2025/12/Afiliado_Shopee_Expert_eurafaelemonteiro.webp"
@@ -79,7 +79,7 @@ const partnerVideosNew = [
     title: "Déborah Oliveira — Afiliada Top do Brasil | R$3 milhões em vendas",
     name: "Déborah Oliveira — Afiliada Top do Brasil",
     duration: "01:08",
-    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou mais de 10 mil alunos a faturarem vendendo na Shopee, Amazon e Kiwify — e sozinha já ultrapassou os 3 milhões em vendas. Com quase 200 mil seguidores, ela mostra que dá, sim, para vender todos os dias como afiliada, mesmo sem aparecer — e sem ficar o dia todo no celular. Para escalar o atendimento, responder mais rápido e não perder nenhuma venda, Déborah usa o InstaNinja como aliada nas automações.",
+    desc: "Déborah Oliveira é referência para quem trabalha com afiliados e vendas digitais. Já ajudou <strong>mais de 10 mil alunos</strong> a faturarem vendendo na Shopee, Amazon e Kiwify — e sozinha já ultrapassou os <strong>3 milhões em vendas</strong>. Com quase <strong>200 mil seguidores</strong>, ela mostra que dá, sim, para <strong>vender todos os dias como afiliada</strong>, mesmo sem aparecer — e sem ficar o dia todo no celular. Para escalar o atendimento, responder mais rápido e <strong>não perder nenhuma venda</strong>, Déborah usa o <strong>InstaNinja</strong> como aliada nas automações.",
     bullets: ["✔️ Automação de respostas", "✔️ Envio de links no Direct", "✔️ Atendimento 24/7"],
     videoUrl: "https://www.youtube.com/shorts/pWwCWtFcWNo?feature=share",
     thumbnail: "https://img.youtube.com/vi/pWwCWtFcWNo/hqdefault.jpg"
@@ -458,7 +458,7 @@ function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
         </div>
         <div className="p-4 sm:p-5">
           <h3 className="text-sm sm:text-base font-extrabold mb-2" style={{ color: C.text }}>Descrição</h3>
-          <p className="text-xs sm:text-sm mb-3 leading-relaxed" style={{ color: C.muted }}>{currentVideo.desc}</p>
+          <p className="text-xs sm:text-sm mb-3 leading-relaxed [&_strong]:font-bold [&_strong]:text-foreground" style={{ color: C.muted }} dangerouslySetInnerHTML={{ __html: currentVideo.desc }} />
           <p className="text-xs sm:text-sm font-semibold leading-relaxed" style={{ color: C.primary }}>
             Assista ao vídeo e veja como a {currentVideo.name} usa o InstaNinja para aumentar o faturamento como afiliada — de forma inteligente e sem complicação.
           </p>
