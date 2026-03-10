@@ -635,9 +635,9 @@ export default function Index() {
               <div className="relative flex-shrink-0 w-full lg:w-auto flex justify-center">
                 <PhoneCarousel />
                 {isDesktop && <>
-                  <FloatingBadge className="absolute top-12 -left-20 z-50 animate-float-1" icon="📈" title="3x mais" sub="conversões" />
-                  <FloatingBadge className="absolute top-40 -right-16 z-50 animate-float-2" icon="💬" title="24/7" sub="automação ativa" />
-                  <FloatingBadge className="absolute bottom-24 -left-12 z-50 animate-float-3" icon="⚡" title="15 segundos" sub="para ativar" />
+                  <FloatingBadge className="absolute top-12 -left-20 z-50 animate-float-1" icon="📈" title={t("floatingBadges.conversions.title")} sub={t("floatingBadges.conversions.sub")} />
+                  <FloatingBadge className="absolute top-40 -right-16 z-50 animate-float-2" icon="💬" title={t("floatingBadges.automation.title")} sub={t("floatingBadges.automation.sub")} />
+                  <FloatingBadge className="absolute bottom-24 -left-12 z-50 animate-float-3" icon="⚡" title={t("floatingBadges.activate.title")} sub={t("floatingBadges.activate.sub")} />
                 </>}
               </div>
             </div>
