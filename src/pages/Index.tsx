@@ -767,7 +767,7 @@ export default function Index() {
                 </video>
                 <div className="absolute -top-2 -right-3 rounded-full px-2.5 py-1 text-[10px] font-bold text-white shadow-lg"
                   style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
-                  No piloto automático
+                  {t("howItWorks.autoPilot")}
                 </div>
               </div>
             </div>
