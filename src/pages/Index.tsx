@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback, useEffect, memo, lazy } from "rea
 
 import { useTranslation } from "react-i18next";
 import "@/i18n";
-import heroPhoneGif from "@/assets/hero-phone.gif";
+import heroPhoneVideo from "@/assets/hero-phone.mp4";
 import instaNinjaLogo from "@/assets/instaninja-logo.webp";
 import instagramApiBadge from "@/assets/instagram-api-badge.png";
 
