@@ -693,9 +693,9 @@ export default function Index() {
                   <span className="text-lg">⭐</span>
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#D520C3" }}>Reconhecimento Nacional</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold mb-1.5 text-white">
                   O <span style={{ color: "#D520C3" }}>#1 em Automação</span> para Afiliados, Produtores de Conteúdo e Empresas no Brasil
-                </h3>
+                </h2>
                 <p className="text-xs sm:text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>Nos maiores programas de afiliados do Brasil</p>
               </div>
               {/* Marquee de plataformas */}
