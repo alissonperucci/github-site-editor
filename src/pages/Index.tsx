@@ -726,7 +726,7 @@ export default function Index() {
                     <div key={i} className="marquee-item flex flex-col items-center gap-2 p-4 sm:p-5 rounded-xl flex-shrink-0 cursor-pointer hover:scale-105 transition-transform"
                       style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", minWidth: "160px" }}
                       onClick={() => setPressVideoOpen(true)}>
-                      <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+                      <img src={logo.file} alt={logo.name} loading="lazy" decoding="async" width="64" height="64" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
                       <span className="text-[10px] sm:text-xs font-semibold text-center whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>{logo.name}</span>
                     </div>
                   ))}
