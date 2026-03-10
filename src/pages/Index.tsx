@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect, memo, lazy } from "react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 import heroPhoneGif from "@/assets/hero-phone.gif";
