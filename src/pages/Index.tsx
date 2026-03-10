@@ -762,10 +762,10 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 leading-tight" style={{ color: C.primary }}>
-              Todo mundo já está usando o InstaNinja. E você?
+              Todo mundo já está usando o InstaNinja. E você? O que está fazendo para não perder vendas, clientes e seguidores?
             </h2>
             <p className="text-sm sm:text-base max-w-4xl mx-auto" style={{ color: C.muted }}>
-              Não é só para grandes influenciadores — qualquer pessoa pode vender mais e ganhar tempo com o InstaNinja.
+              Não é só para grandes influenciadores — qualquer pessoa pode vender mais e ganhar tempo com o InstaNinja. É simples, acessível e rápido de ativar. Somos a maior automação de Instagram da América do Sul 🌎, prontos para colocar você no nível dos maiores.
             </p>
           </div>
           <VideoGallery videos={partnerVideosNew} />
