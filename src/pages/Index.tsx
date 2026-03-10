@@ -520,8 +520,8 @@ export default function Index() {
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
         style={{ background: "rgba(255,255,255,0.97)", backdropFilter: "blur(14px)", borderBottom: scrolled ? "2px solid #e5e7eb" : "1px solid transparent", boxShadow: scrolled ? "0 2px 12px rgba(0,0,0,0.06)" : "none" }}>
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-2">
-          <img src={instaNinjaLogo} alt="InstaNinja" className="h-8 sm:h-9 w-auto flex-shrink-0" loading="eager" />
+        <div className="max-w-6xl mx-auto px-2 sm:px-6 py-1.5 sm:py-2.5 flex items-center justify-between gap-1.5">
+          <img src={instaNinjaLogo} alt="InstaNinja" className="h-9 sm:h-9 w-auto flex-shrink-0" loading="eager" />
           <div className="hidden md:flex items-center gap-5 text-sm font-medium">
             <a href="#como-funciona" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.howItWorks")}</a>
             <a href="#recursos" className="hover:opacity-80 transition-opacity" style={{ color: C.primary }}>{t("nav.features")}</a>
@@ -533,13 +533,13 @@ export default function Index() {
                 <button key={l.code} onClick={() => i18n.changeLanguage(l.code)}
                   className="rounded-full px-1.5 py-0.5 flex items-center gap-1 transition-all"
                   style={{ background: i18n.language === l.code ? "#fff" : "transparent", boxShadow: i18n.language === l.code ? "0 1px 6px rgba(0,0,0,0.08)" : "none" }}>
-                  <img src={l.flag} alt={l.label} className="w-4 h-auto rounded-sm" loading="lazy" />
+                  <img src={l.flag} alt={l.label} className="w-5 h-auto rounded-sm" loading="lazy" />
                   <span className="text-[10px] font-bold leading-none hidden sm:inline" style={{ color: i18n.language === l.code ? C.primary : "#666" }}>{l.label}</span>
                 </button>
               ))}
             </div>
             <a href={APP_URL} target="_blank" rel="noreferrer"
-              className="text-white text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
+              className="text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
               Entrar
             </a>
