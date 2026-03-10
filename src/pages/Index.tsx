@@ -395,10 +395,11 @@ function SectionDivider({ from, to, flip = false }: { from: string; to: string; 
 }
 
 function VideoGallery({ videos }: { videos: typeof partnerVideosNew }) {
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [currentVideo, setCurrentVideo] = useState(videos?.[0] ?? partnerVideosNew[0]);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   if (!videos || videos.length === 0) return null;
+
 
   const getYouTubeId = (url: string) => {
     if (!url) return null;
