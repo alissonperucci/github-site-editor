@@ -533,13 +533,13 @@ export default function Index() {
                 <button key={l.code} onClick={() => i18n.changeLanguage(l.code)}
                   className="rounded-full px-1.5 py-0.5 flex items-center gap-1 transition-all"
                   style={{ background: i18n.language === l.code ? "#fff" : "transparent", boxShadow: i18n.language === l.code ? "0 1px 6px rgba(0,0,0,0.08)" : "none" }}>
-                  <img src={l.flag} alt={l.label} className="w-4 h-auto rounded-sm" loading="lazy" />
+                  <img src={l.flag} alt={l.label} className="w-5 h-auto rounded-sm" loading="lazy" />
                   <span className="text-[10px] font-bold leading-none hidden sm:inline" style={{ color: i18n.language === l.code ? C.primary : "#666" }}>{l.label}</span>
                 </button>
               ))}
             </div>
             <a href={APP_URL} target="_blank" rel="noreferrer"
-              className="text-white text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
+              className="text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all hover:opacity-90 flex-shrink-0"
               style={{ background: `linear-gradient(135deg, ${C.cta}, ${C.primary})` }}>
               Entrar
             </a>
